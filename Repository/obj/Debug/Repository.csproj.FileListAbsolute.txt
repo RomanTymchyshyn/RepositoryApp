@@ -1,0 +1,6 @@
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\Repository\bin\Debug\Repository.dll
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\Repository\bin\Debug\Repository.pdb
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\Repository\obj\Debug\Repository.dll
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\Repository\obj\Debug\Repository.pdb
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\Repository\bin\Debug\Repository.XML

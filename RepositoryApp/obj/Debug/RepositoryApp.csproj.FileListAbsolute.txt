@@ -1,0 +1,13 @@
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\bin\Debug\RepositoryApp.exe.config
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\bin\Debug\RepositoryApp.exe
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\bin\Debug\RepositoryApp.pdb
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\obj\Debug\RepositoryApp.csprojResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\obj\Debug\RepositoryApp.MainForm.resources
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\obj\Debug\RepositoryApp.csproj.GenerateResource.Cache
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\obj\Debug\RepositoryApp.exe
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\obj\Debug\RepositoryApp.pdb
+c:\users\roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\obj\Debug\Repository.Properties.Resources.resources
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\bin\Debug\Resources\EventsDB_log.ldf
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\bin\Debug\Resources\EventsDB.mdf
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\bin\Debug\Repository.dll
+C:\Users\Roman\documents\visual studio 2013\Projects\RepositoryApp\RepositoryApp\bin\Debug\Repository.pdb

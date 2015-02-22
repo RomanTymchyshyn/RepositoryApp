@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Repository</name>
+    </assembly>
+    <members>
+        <member name="T:Repository.Savers.DbSaver">
+            <summary>
+            Class that allows you to save events to database.
+            </summary>
+        </member>
+        <member name="T:Repository.ISaver">
+            <summary>
+            Interface for objects, that can save events to the different storages
+            </summary>
+        </member>
+        <member name="M:Repository.ISaver.SaveEvents(System.Boolean,Repository.Event[])">
+            <summary>
+            Saves events.
+            </summary>
+            <param name="overwrite">Determines whether this event must be overwrited if there already exists such event in the repository.</param>
+            <param name="events">Events that you want to save.</param>
+        </member>
+        <member name="M:Repository.Savers.DbSaver.#ctor(System.String,System.String,System.String)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="connString">Connection string for databse</param>
+            <param name="providerName">Name of the provider of the database.</param>
+            <param name="tableName">
+                Name of the table, which you want to save events to.
+                Column names must match names of the public fields and public properties of events.
+            </param>
+        </member>
+        <member name="T:Repository.Repo">
+            <summary>
+            Class that represents the repository and allow you to work with Events (Events - objects of the class <c>Event</c>).
+            <para>You can Add event to repo and save in way you want</para>
+            <para><seealso cref="T:Repository.Event"/></para>
+            </summary>
+        </member>
+        <member name="M:Repository.Repo.#ctor(System.Collections.Generic.KeyValuePair{System.String,Repository.ISaver}[])">
+            <summary>
+            CTOR
+            </summary>
+            <param name="opts">
+                Array of KeyValuePairs where key - name of the saving method, value - saver, that can save value in the way that you want.
+                <see cref="T:Repository.ISaver"/>
+            </param>
+        </member>
+        <member name="M:Repository.Repo.SaveWithoutAdding(System.Boolean,Repository.Event,System.String[])">
+            <summary>
+            Private method which only saves event in choosed way without adding it locally.
+            </summary>
+            <param name="overwrite">Determines whether this event must be overwrited if there already exists such event in the repository.</param>
+            <param name="e">Event that you want to save.</param>
+            <param name="opts">Options of saving. Determines ways in which event must be saved.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>opts</c> is <c>null</c></exception>
+        </member>
+        <member name="M:Repository.Repo.ConfigWithNewTools(System.Collections.Generic.KeyValuePair{System.String,Repository.ISaver}[])">
+            <summary>
+            Allows you to add functionality to repo in runtime.
+            Adds new way of saving events to repository.
+            </summary>
+            <param name="opts">
+                Array of KeyValuePairs where key - <c>string</c>, which is name of the saving method,
+                value - <c>ISaver</c>saver, that can save value in the way that you want.
+                <see cref="T:Repository.ISaver"/>
+            </param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>opts</c> is <c>null</c></exception>
+        </member>
+        <member name="M:Repository.Repo.ConfigWithNewTool(System.String,Repository.ISaver)">
+            <summary>
+            Allows you to add functionality to repo in runtime.
+            Adds new way of saving events to repository.
+            </summary>
+            <param name="formatName">
+                Name of method of saving.
+            </param>
+            <param name="saver">
+                <c>ISaver</c>saver, that can save value in the way that you want.
+            </param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>opts</c> or <c>saver</c> is <c>null</c></exception>
+            <exception cref="T:System.ArgumentException">Throw when <c>formatName</c> is empty</exception>
+        </member>
+        <member name="M:Repository.Repo.AddEvents(System.Boolean,Repository.Event[])">
+            <summary>
+            Adds event to repository locally without saving.
+            </summary>
+            <param name="overwrite">
+                Determines whether this event must be overwrited if there already exists such event in the repository.
+            </param>
+            <param name="events">
+                Array of events that you want to save.
+            </param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>events</c> is <c>null</c></exception>
+        </member>
+        <member name="M:Repository.Repo.SaveEvent(System.Boolean,Repository.Event,System.String[])">
+            <summary>
+                Adds event to repository and saves it in the way descibed by opts parameter
+            </summary>
+            <param name="overwrite">
+                Determines whether this event must be overwrited if there already exists such event in the repository.
+            </param>
+            <param name="e">
+                Event that you want to save.
+            </param>
+            <param name="opts">
+                Array of options, which describe ways to save event.
+            </param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>opts</c> is <c>null</c></exception>
+        </member>
+        <member name="M:Repository.Repo.SaveEvent(System.Boolean,Repository.Event,System.String)">
+            <summary>
+                Adds event to repository and saves it in the way descibed by opts parameter
+            </summary>
+            <param name="overwrite">
+                Determines whether this event must be overwrited if there already exists such event in the repository.
+            </param>
+            <param name="e">
+                Event that you want to save.
+            </param>
+            <param name="opts">
+                Array of options, which describe ways to save event.
+                <para>Opts must be following structure: <c>"way1;way2;way3"</c></para>
+            </param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>opts</c> is <c>null</c></exception>
+        </member>
+        <member name="M:Repository.Repo.SaveAllEvents(System.Boolean,System.Boolean,System.String[])">
+            <summary>
+                Saves all added earlier and stored locally events in the way descibed by opts parameter
+            </summary>
+            <param name="deleteLocal">
+                Determines whether locally stored events must be deleted or not.
+            </param>
+            <param name="overwrite">
+                Determines whether this event must be overwrited if there already exists such event in the repository.
+            </param>
+            <param name="opts">
+                Array of options, which describe ways to save event.
+            </param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>opts</c> is <c>null</c></exception>
+        </member>
+        <member name="M:Repository.Repo.SaveAllEvents(System.Boolean,System.Boolean,System.String)">
+            <summary>
+                Saves all added earlier and stored locally events in the way descibed by opts parameter
+            </summary>
+            <param name="deleteLocal">
+                Determines whether locally stored events must be deleted or not.
+            </param>
+            <param name="overwrite">
+                Determines whether this event must be overwrited if there already exists such event in the repository.
+            </param>
+            <param name="opts">
+                Array of options, which describe ways to save event.
+                <para>Opts must be following structure: <c>"way1;way2;way3"</c></para>
+            </param>
+            <exception cref="T:System.ArgumentNullException">Throw when <c>opts</c> is <c>null</c></exception>
+        </member>
+        <member name="T:Repository.Savers.TxtSaver">
+            <summary>
+            Class that allows you to save events to txt file.
+            </summary>
+        </member>
+        <member name="M:Repository.Savers.TxtSaver.#ctor(System.String)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="directoryName">Name of the directory in which will be created files with saved events</param>
+        </member>
+        <member name="T:Repository.Savers.XMLSaver">
+            <summary>
+            Class that allows you to serialize events to xml file.
+            </summary>
+        </member>
+        <member name="M:Repository.Savers.XMLSaver.#ctor(System.String)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="directoryName">Name of the directory in which will be created files with serialized events</param>
+        </member>
+    </members>
+</doc>
